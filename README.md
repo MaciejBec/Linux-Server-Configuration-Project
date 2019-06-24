@@ -15,12 +15,58 @@ Full Stack Web Developer.
 
 ### Get your server
 - Start server instance on Amazon Lightsail 
-sudo ufw allow ssh
-sudo ufw status 
-su
-sudo grader
-cd
-sudo cat /etc/passwd
-ssh-keygen
-sudo apt-get install libapache2-mod-wsgi-py3
-sudo apt-get install postgres
+
+### Create User
+- sudo adduser grader
+- sudo nano /etc/sudoers.d/grader
+- grader ALL=(ALL:ALL) ALL
+- sudo nano /etc/hosts
+
+### Configure key for User
+- ssh-keygen -t rsa
+- ssh-copy-id grader@.......
+- cat /.ssh/authorized_keys
+- nano /home/grader/.ssh/authorized_keys
+
+### Execute key
+- sudo nano/etc/ssh/sshd_congif
+- sudo service ssh restart 
+
+### Change port from 22 to 2200
+- sudo service ssh restart
+
+### Update
+- sudo apt-get update
+- sudo apt-get upgrade
+
+### Create Firewall
+- sudo ufw default deny incoming
+- sudo ufw default allow outgoing
+- sudo ufw allow 2200/tcp
+- sudo ufw allow www
+- sudo ufw allow ntp 
+- sudo ufw allow enable 
+
+### Create scripts
+- sudo apt-get install unattended-upgrades
+- sudo dpkg-reconfigure --priority=low unattended-upgrades
+
+### Install Apache2
+- sudo apt-get install apache2 libapache2-mod-wsgi git
+- sudo a2enmod wsgi 
+
+### Install PostgresSQL
+- sudo apt-get install libpq-dev python-dev
+- sudo apt-get install postgresql postgresql-contrib
+- sudo cat /etc/postgresql/9.3/main/pg_hba.conf
+- sudo su -postgres
+- psql 
+
+### Install Flask
+- sudo apt-get install python-pip
+- sudo pip install Flask
+- sudo pip install httplib2 oauth2client sqlalchemy psycopg2 sqlalchemy_utils
+- sudo pip install requests
+
+### Restart Apache
+- sudo service apache2 restart 
