@@ -51,6 +51,9 @@ Full Stack Web Developer.
 - sudo apt-get install unattended-upgrades
 - sudo dpkg-reconfigure --priority=low unattended-upgrades
 
+### Install Apache2
+- sudo apt-get install apache2 libapache2-mod-wsgi git
+- sudo a2enmod wsgi
 
 ### Install PostgresSQL
 - sudo apt-get install libpq-dev python-dev
@@ -64,3 +67,6 @@ Full Stack Web Developer.
 - sudo pip install Flask
 - sudo pip install httplib2 oauth2client sqlalchemy psycopg2 sqlalchemy_utils
 - sudo pip install requests
+
+### Restart Apache
+- sudo service apache2 restart
