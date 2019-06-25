@@ -76,7 +76,7 @@ Full Stack Web Developer.
 
 ### Configure Apache 
 - sudo nano /etc/apache2/sites-enabled/000-default.conf 
-
+```
 <VirtualHost *:80>
         -ServerName 18.196.31.173
         -ServerAdmin webmaster@localhost.com
@@ -89,7 +89,7 @@ Full Stack Web Developer.
         ErrorLog ${APACHE_LOG_DIR}/error.log
         CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
-
+```
 
 ### Restart Apache
 - sudo service apache2 restart
