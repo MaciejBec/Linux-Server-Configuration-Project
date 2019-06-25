@@ -78,11 +78,11 @@ Full Stack Web Developer.
 - sudo nano /etc/apache2/sites-enabled/000-default.conf 
 
 <VirtualHost *:80>
-        ServerName 18.196.31.173
-        ServerAdmin webmaster@localhost.com
-        WSGIDaemonProcess app python-path=/home/grader/Project-Item-Catalog/Udacity/lib/python3.6/site-packages
-        WSGIProcessGroup app
-        WSGIScriptAlias / /home/grader/Project-Item-Catalog/server.wsgi
+        -ServerName 18.196.31.173
+        -ServerAdmin webmaster@localhost.com
+        -WSGIDaemonProcess app python-path=/home/grader/Project-Item-Catalog/Udacity/lib/python3.6/site-packages
+        -WSGIProcessGroup app
+        -WSGIScriptAlias / /home/grader/Project-Item-Catalog/server.wsgi
         <Directory /home/grader/Project-Item-Catalog/>
                 Require all granted
         </Directory>
