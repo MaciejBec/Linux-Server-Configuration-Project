@@ -33,6 +33,9 @@ Full Stack Web Developer.
 - sudo service ssh restart 
 
 ### Change port from 22 to 2200
+- sudo nano /etc/ssh/sshd_config
+- Change port from 22 to 2200 
+- Control + X and exit Y 
 - sudo service ssh restart
 
 ### Update
@@ -40,20 +43,24 @@ Full Stack Web Developer.
 - sudo apt-get upgrade
 
 ### Create Firewall
-- sudo ufw default deny incoming
+- sudo ufw default deny incoming 
 - sudo ufw default allow outgoing
 - sudo ufw allow 2200/tcp
 - sudo ufw allow www
 - sudo ufw allow ntp 
 - sudo ufw allow enable 
 
-### Create scripts
-- sudo apt-get install unattended-upgrades
-- sudo dpkg-reconfigure --priority=low unattended-upgrades
-
 ### Install Apache2
 - sudo apt-get install apache2 libapache2-mod-wsgi git
 - sudo a2enmod wsgi
+
+### Install git 
+- sudo apt-get install git
+- git config --global user.name <username> git config --global user.email <email> 
+  
+### Clone project 
+- git clone https://github.com/MaciejBec/Project-Item-Catalog.git 
+- sudo chmod 777 -R Project-Item-Catalog
 
 ### Install PostgresSQL
 - sudo apt-get install libpq-dev python-dev
@@ -62,11 +69,27 @@ Full Stack Web Developer.
 - sudo su -postgres
 - psql 
 
-### Install Flask
-- sudo apt-get install python-pip
-- sudo pip install Flask
-- sudo pip install httplib2 oauth2client sqlalchemy psycopg2 sqlalchemy_utils
-- sudo pip install requests
+### Install Dependencies 
+- python3 -m venv udacity
+- source udacity/bin/acivate
+- pip install -r requrements.txt
+
+### Configure Apache 
+- sudo nano /etc/apache2/sites-enabled/000-default.conf 
+
+<VirtualHost *:80>
+        ServerName 18.196.31.173
+        ServerAdmin webmaster@localhost.com
+        WSGIDaemonProcess app python-path=/home/grader/Project-Item-Catalog/Udacity/lib/python3.6/site-packages
+        WSGIProcessGroup app
+        WSGIScriptAlias / /home/grader/Project-Item-Catalog/server.wsgi
+        <Directory /home/grader/Project-Item-Catalog/>
+                Require all granted
+        </Directory>
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
 
 ### Restart Apache
 - sudo service apache2 restart
