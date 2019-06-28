@@ -93,3 +93,6 @@ Full Stack Web Developer.
 
 ### Restart Apache
 - sudo service apache2 restart
+
+### Resources 
+[UFW docs](https://help.ubuntu.com/community/UFW).
