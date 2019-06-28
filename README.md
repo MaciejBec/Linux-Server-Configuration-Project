@@ -93,6 +93,13 @@ Full Stack Web Developer.
 
 ### Restart Apache
 - sudo service apache2 restart
+How to setup PostgresQL
+Virtual Environments
+Flask uswgi and nginx
+Flask app - deploy a flask app
+
 
 ### Resources 
-[UFW docs](https://help.ubuntu.com/community/UFW).
+-[UFW docs](https://help.ubuntu.com/community/UFW).
+-[How to setup PostgresQL](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04)
+-
