@@ -16,6 +16,9 @@ Full Stack Web Developer.
 ### Get your server
 - Start server instance on Amazon Lightsail 
 
+**Reference** 
+- [Amazon Lightsail](https://lightsail.aws.amazon.com/ls/docs/en_us/articles/how-to-create-amazon-lightsail-instance-virtual-private-server-vps)
+
 ### Create User
 - sudo adduser grader
 - sudo nano /etc/sudoers.d/grader
